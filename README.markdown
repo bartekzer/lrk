@@ -1,61 +1,67 @@
-ЛРК
-===
+# ЛРК
 
-*Листоробка* — from *листок* "slip" and *коробка* "box".  Calque of German *Zettelkasten*
+_Листоробка_ — from _листок_ "slip" and _коробка_ "box". Calque of German _Zettelkasten_
 
-LRK is a collection of note-management scripts for the 70s.
+LRK is a collection of note-management scripts inspired by the 70s.
 
-Requirements
-------------
+## Installation
 
-You need to have Perl (>=5.10), `fzf` and a POSIX shell installed.
-
-Installation
-------------
-
-```
+```sh
 make [PREFIX=/usr/local/bin]
 ```
 
-Usage
------
+## Usage
 
-Edit the `LRK_DIR` environment variable as you want.  The default is
-`$HOME/.lrx`.
+Set the `LRK_DIR` environment variable to your desired directory. The default is `$HOME/.lrk`.
 
-You can create a note using the `lrk-create` script:
-```
-$ lrk-create
-/home/gustek/20010911084630
+Create a note:
+
+```sh
+lrk add "Note Title" --tags "tag1,tag2"
 ```
 
-Note files are named as the current date and time.
+List notes:
 
-You can list all note IDs using the `lrk-list` script:
-```
-$ lrk-list
-20010911084630
-20010911090320
-20010911093710
-...
+```sh
+lrk list --all --tags "tag1" --sort date
 ```
 
-You can get the value for the `XXX` metadata of note `<id>` using the `lrk-get`
-script:
-```
-$ lrk-get TAGS 20010911084630
-AA11 767-223ER
+Find notes:
+
+```sh
+lrk find "Note Title" --tags "tag1" --date "2025-10-01"
 ```
 
-You can search for one or more specific notes on different metadata using the
-`lrk-findby` script as follows.  The script spawns a `fzf` process enabling the
-user to use fuzzy search over the specified metadata:
-```
-$ lrk-findby TITLE TAGS
+Open a note:
+
+```sh
+lrk open 123 --editor vim
 ```
 
-Integration
------------
+Delete a note:
 
-You can easily integrate these scripts in your favourite text editor/terminal
-multiplexer.  See my dotfiles for an example using Kakoune and zellij.
+```sh
+lrk delete 123
+```
+
+Archive a note:
+
+```sh
+lrk archive 123
+```
+
+Unarchive a note:
+
+```sh
+lrk unarchive 123
+```
+
+Show backlinks:
+
+```sh
+lrk backlinks 123
+```
+
+## Integration
+
+LRK can be integrated with other tools such as Kakoune or Zellij. Take a look at my configuration to see an example.
