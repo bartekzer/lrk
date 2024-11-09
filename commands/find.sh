@@ -19,8 +19,8 @@ find_notes() {
                 shift 2
                 ;;
             *)
-                title="$1"
-                shift
+                echo "Unknown option: $1"
+                return 1
                 ;;
         esac
     done
