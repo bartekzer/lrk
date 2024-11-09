@@ -6,8 +6,16 @@ LRK is a collection of note-management scripts inspired by the 70s.
 
 ## Installation
 
+# Make
+
 ```sh
 make [PREFIX=/usr/local/bin]
+```
+
+# Nix
+
+```sh
+nix build .#lrk
 ```
 
 ## Usage
@@ -17,7 +25,7 @@ Set the `LRK_DIR` environment variable to your desired directory. The default is
 Create a note:
 
 ```sh
-lrk add "Note Title" --tags "tag1,tag2"
+lrk add --title "Note Title" --tags "tag1,tag2"
 ```
 
 List notes:
@@ -29,13 +37,7 @@ lrk list --all --tags "tag1" --sort date
 Find notes:
 
 ```sh
-lrk find "Note Title" --tags "tag1" --date "2025-10-01"
-```
-
-Open a note:
-
-```sh
-lrk open 123 --editor vim
+lrk find --title "Note Title" --tags "tag1" --date "2025-10-01"
 ```
 
 Delete a note:

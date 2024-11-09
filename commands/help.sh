@@ -4,16 +4,15 @@ show_help() {
     cat <<EOF
 Usage: ${0##*/} <command> [options]
 Commands:
-    add [TITLE] [--tags TAGS]       Add a new note with optional tags
-    open ID [--editor EDITOR]       Open a note by ID with an optional editor
-    list [--tags TAGS] [--all]      List notes with optional filters
+    add [--title TITLE] [--tags TAGS]  Add a new note with optional tags
+    list [--tags TAGS] [--all]         List notes with optional filters
          [--sort date|title|tag]
-    find [TITLE] [--tags TAGS]      Find notes by title, tags, or date
+    find [TITLE] [--tags TAGS]         Find notes by title, tags, or date
          [--date DATE]
-    delete ID                       Delete a note by ID
-    archive ID                      Archive a note by ID
-    unarchive ID                    Unarchive a note by ID
-    backlinks ID                    Show backlinks for a note by ID
-    help                            Show this help message
+    delete ID                          Delete a note by ID
+    archive ID                         Archive a note by ID
+    unarchive ID                       Unarchive a note by ID
+    backlinks ID                       Show backlinks for a note by ID
+    help                               Show this help message
 EOF
 }

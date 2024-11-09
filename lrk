@@ -9,7 +9,7 @@ fi
 
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 
-for subcommand in add archive backlinks delete find help list open unarchive
+for subcommand in add archive backlinks delete find help list unarchive
 do
     source "$SCRIPT_DIR/commands/$subcommand.sh"
 done
@@ -34,7 +34,7 @@ main() {
             ;;
         find)
             shift
-            find "$@"
+            find_notes "$@"
             ;;
         help|--help|-h)
             show_help
@@ -42,10 +42,6 @@ main() {
         list)
             shift
             list "$@"
-            ;;
-        open)
-            shift
-            open "$@"
             ;;
         unarchive)
             shift
