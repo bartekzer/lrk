@@ -6,13 +6,13 @@ LRK is a collection of note-management scripts inspired by the 70s.
 
 ## Installation
 
-# Make
+### Make
 
 ```sh
 make [PREFIX=/usr/local/bin]
 ```
 
-# Nix
+### Nix
 
 ```sh
 nix build .#lrk
