@@ -29,5 +29,5 @@ DATE: $(date +"%Y-%m-%d %H:%M:%S")
 TAGS: ${tags}
 ---
 EOF
-    echo "Note created at $path/$fname"
+    echo "$path/$fname"
 }
